@@ -20,7 +20,7 @@ let getData = () => {
         // console.log(data);
         
         return list.innerHTML = data.map((users) => {
-            return `<li id='list__style'>User: ${users.login} Link: <a href='${users.url}'>${users.url}</a></li>`;
+            return `<li id='list__style'>User: ${users.login} Link: <a href='${users.url}'>${users.html_url}</a></li>`;
         });
     })
     .catch((error) => {
