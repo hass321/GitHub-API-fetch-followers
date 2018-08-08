@@ -1,4 +1,4 @@
-let cacheName = 'Cache_Data-06';
+let cacheName = 'Cache_Data-07';
 let filtesInCache = [
     'app.js',
     'index.html',
@@ -23,7 +23,7 @@ self.addEventListener('activate', (event) => {
         caches.keys()
         .then((keysList) => {
             return Promise.all(keysList.map((key) => {
-                if(key !== cacheName && key !== 'dynamic-06'){
+                if(key !== cacheName && key !== 'dynamic-07'){
                     return caches.delete(key);
                 }
             }))
@@ -45,7 +45,7 @@ self.addEventListener('fetch', (event) => {
             else{
                 return fetch(event.request)
                 .then((response2) => {
-                    return caches.open('dynamic-06')
+                    return caches.open('dynamic-07')
                     .then((cache) => {
                         cache.put(event.request, response2.clone());
                         return response2;
